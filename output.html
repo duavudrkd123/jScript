@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>output.html</title>
+</head>
+<body>
+    <div id="showResult" style="border: 1px solid red;"></div> <!--이한에 값을 넣은거. 그래서 브라우저에 표시가됨-->
+
+    <script>
+        var num1 = 10;
+        var num2 = 20;
+
+        var result = num1 + num2 + 5;
+
+        var elem = document.getElementById("showResult");
+        elem.innerHTML = "<b>result</b>";
+        // window.print("결과: " + result); //윈도우 그 페이지를 프린트는 출력을 해주는것
+        document.write("결과: " + result);
+        elem.innerHTML = result;
+        // window.alert(result); /*확인창으로 출력을 해줌*/
+        console.log("결과: " + result); 
+        /* 이건 콘솔창에서 출력해주는거 */
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>condition.html</title>
+</head>
+
+<body>
+    <div id="showResult" style="border: 1px solid red;"></div>
+    <!--이한에 값을 넣은거. 그래서 브라우저에 표시가됨-->
+    <script>
+        var cols = ['일', '월','화','수','목','금','토'];
+        // for(var i = 0; i<cols.length; i++){
+        //     console.log(cols[i]);
+        // }
+        // // for(String str:list){} 자바스크립트에서는 이렇게 포문을 사용.
+        // for (col of cols) {
+        //     console.log(col);
+        // }
+        cols.forEach(function(a/*요소값*/, b/*인덱스값*/, c/*배열 자체*/){
+            console.log(a, b, c);
+            
+            });
+        var i = 1;
+        var elem = document.getElementById("showResult");
+        var tag = "<table border='5'bordercolor='red'><tr>"
+        // for (col of cols){
+        //     console.log(col);
+        //     tag += "<td>"+col+"</td>"
+        // }
+
+        cols.forEach(function(a,b,c){
+            if(b%6!=0) {
+                tag += "<td>"+a+"</td>";
+            }else if(b==6) {
+                tag += "<td bgcolor='lightblue'>" + a + "</td>";
+
+            }
+            else{
+                tag += "</tr><tr><td bgcolor='orange'>" + a + "</td>";
+
+            }
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+        while (i < 32) {
+            if (i % 7 == 1) {
+                tag += "</tr><tr><td bgcolor='orange'>" + i + "</td>";
+
+            } else if (i % 7 == 0) {
+                  tag += "<td bgcolor='lightblue'>" + i + "</td>";
+            }
+            else {
+                tag += "<td>" + i + "</td>";
+
+            }
+            elem.innerHTML += i + " ";
+            i++;
+        }
+        tag += "</tr></table>";
+        elem.innerHTML = tag;
+
+
+
+
+        // var bool1 = 10 < 8;
+        // var sum = 0;
+        // for (var i = 0; i < 5; i++) {
+        //     bool1 = !bool1;
+        //     if (bool1) {
+        //         sum += i;
+        //     }
+        // }
+        // console.log(sum)
+        // if (bool1) {
+        //     console.log("참 :" + bool1);
+        // } else {
+        //     console.log("거짓 :" + bool1);
+        // }
+
+
+    </script>
+
+</body>
+
+</html>
