@@ -1,28 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>string.html</title>
 </head>
+
 <body>
     <script>
         var str1 = "Hello"; //스트링 기본 데이터 타입
         var str2 = new String("Hello");  // 오브젝트 타입
 
-        if(str1 === str2) {//==값만 비교, === 타입까지 비교하는거
+        if (str1 === str2) {//==값만 비교, === 타입까지 비교하는거
             console.log("같다");
 
-        }else {
+        } else {
             console.log("다르다")
         }
 
-        str1 =  "please locate where 'locate' occurs!";
+        str1 = "please locate where 'locate' occurs!";
         var pos = str1.indexOf('locate');
+        //앞에서 부터 찾을때는 indexOf쓰면됨 lastIndexOf 부터 찾을때 사용
         console.log(pos);
+
+        str1 = "허성준 민해주 김상민 허성준  ";
+        str2 = "최재영";
+        if (str1.indexOf(str2) >= 0) {
+            console.log("존재");
+
+        } else {
+            console.log("없음");
+        }
+
+        console.log("search: " + str1.search("민해주"));
+        console.log("slice: " + str1.slice(10, 13));
+        console.log("substring: " + str1.substring(10, 13));
+        console.log("substr: " + str1.substr(10, 3));
+
+        
+        while (i < 32) {
+            if (i % 7 == 1) {
+                tag += "</tr><tr><td bgcolor='orange'>" + i + "</td>";
+
+            } else if (i % 7 == 0) {
+                  tag += "<td bgcolor='lightblue'>" + i + "</td>";
+            }
+            else {
+                tag += "<td>" + i + "</td>";
+
+            }
+            elem.innerHTML += i + " ";
+            i++;
+        }
+        tag += "</tr></table>";
+        elem.innerHTML = tag;
 
 
     </script>
-    
+
 </body>
+
 </html>
