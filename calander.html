@@ -60,7 +60,7 @@
             if ((i+today.getDay()) % 7 == 1) {
                 tag += "</tr><tr><td bgcolor='orange'>" + i + "</td>";
 
-            } else if (i % 7 == 0) {
+            } else if (i % 7 == (7-today.getDay())){
                 tag += "<td bgcolor='lightblue'>" + i + "</td>";
             }
             else {

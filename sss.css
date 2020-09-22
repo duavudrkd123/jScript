@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+ul {
+  font-size: 25px;
+  font-family: 'Caveat', cursive;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  list-style-type: none; /*리스트 스타일형식 표현을 안보이게하겠다.*/
+}
+li {
+  float: left; /*리스트 형식기본이 밑으로내리는건데 왼쪽으로 붙이겠다.*/
+}
+li a{
+  display: inline-block;
+  color: white;
+  /* text-align: center; */
+  padding: 14px 16px;
+  text-decoration: none;/*밑줄제거*/
+}
+li a:hover{
+  background-color: red;
+}
+li .dropdown-content{
+  display: none;/* 해당 리스트 안보이게*/
+  position: absolute;/* */
+  background-color: #f9f9f9; 
+  min-width: 160px;/* 크기 지정*/
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* 그림자 지정*/
+  z-index: 1; /* */
+  font-family: 'Nanum Pen Script', cursive;
+}
+li .dropdown-content a{
+  display: block; /*해당 목록 아래로 내림*/
+  color: black; /* 텍스트 색상 지정 */
+  padding: 12px 16px;
+  text-align: left;/* 텍스트 왼쪽정렬 */
+}
+li.dropdown:hover .dropdown-content {
+  display: block;
+}
+li .dropdown-content a:hover{
+  background-color: #c7c1c1;
+}
+li .buzz{
+  background-color: white;
+  min-width: 160px;
+  float: left;
+  
+}
+.buzz .dropdown-buzz{
+  /* display: none; */
+  background-color:  white;
+  float: left;
+}
+.music li{
+  float:none;
+}
