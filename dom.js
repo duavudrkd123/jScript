@@ -22,17 +22,12 @@ function loadPage() {
     $table.setAttribute('border', '1');
     let $tr = document.createElement("tr");
     days.forEach(function(a,b,c){
-        console.log(a, b) {
-            if (b % 7 == 0) {
-                $tr = document.createElement("tr");
-            }
-        }
-
-
+        console.log(a, b, c);
+        
     })
-        $th.appendChild(text);
+        $th.appendChild($text);
         $tr.appendChild($th);
     }
     $table.appendChild($tr);
     document.getElementById("bdy").appendChild($table);
-}
+
