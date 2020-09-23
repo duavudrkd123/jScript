@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom2.hrml</title>
+    <style>
+        .lis {
+            background-color: cyan;
+        }
+    </style>
+    <script src="dom.js"></script>
+</head>
+
+<body id="bdy" onload="loadPage()">
+    <script>
+        document.querySelectorAll("body");
+        let bdy = document.getElementsByTagName("body");
+        bdy[0].innerHTML = "<h1>Hello</h1>";
+
+        // <ul><li> 오렌지 </li></ul>
+
+        let $ul = document.createElement("ul"); //ul이 자바스크립트에서 쓰는 예약어랑 구분하기위해 $를 넣는다(중복가능성)
+        let $li = document.createElement("li");
+        let $text = document.createTextNode("오렌지를 오랜지")
+        $li.setAttribute("class", "lis");
+        $ul.appendChild($li);
+        $li.appendChild($text);
+
+        $text = document.createTextNode("사과");
+        $li = document.createElement("li");
+        $ul.appendChild($li);
+        $li.appendChild($text);
+        $li.setAttribute("style", "background: yellow;");
+
+
+        bdy[0].appendChild($ul)
+
+        let $div = document.createElement("div");
+        let $p = document.createElement("p");
+        let $h2 = document.createElement("h2");
+        let $text1 = document.createTextNode("Hello");
+        let $text2 = document.createTextNode("world");
+
+
+        $div.appendChild(document.createTextNode("div텍스트 영역"))
+       
+        $div.appendChild($h2)
+        $h2.appendChild($text1);
+        $div.appendChild($p);
+        $h2.setAttribute("style", "background: green;");
+        $p.setAttribute("style", "background: brown;");
+        $p.appendChild($text2);
+        bdy[0].appendChild($div)
+      
+
+
+
+
+    </script>
+
+</body>
+
+</html>

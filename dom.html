@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom.html</title>
+</head>
+<body>
+<div id="ddd">0
+    <a href="#">1링크A
+    </a>2
+        <ul>3
+            <li>Orange</li>
+            <li>Apple</li>
+            <li>
+                <ol>
+                    <li>부사</li>
+                    <li>아오리</li>
+                    <li>홍옥</li>
+                </ol>
+            </li>
+       </ul>123
+        <h2>여기 찾아보세요</h2>
+</div>
+    <script>
+        let ddd = document.getElementById("ddd");
+        console.log(ddd.childNodes[3].childNodes[1]
+        .childNodes[0].nodeValue);
+        console.log(window.document.URL);
+    </script>
+</body>
+</html>
