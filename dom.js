@@ -21,13 +21,12 @@ function loadPage() {
     let $table = document.createElement("table");
     $table.setAttribute('border', '1');
     let $tr = document.createElement("tr");
-    days.forEach(function(a,b,c){
+    days.forEach(function (a, b, c) {
         console.log(a, b, c);
-        
-    })
-        $th.appendChild($text);
-        $tr.appendChild($th);
-    }
-    $table.appendChild($tr);
-    document.getElementById("bdy").appendChild($table);
 
+    })
+    $th.appendChild($text);
+    $tr.appendChild($th);
+}
+$table.appendChild($tr);
+document.getElementById("bdy").appendChild($table);

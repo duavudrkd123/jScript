@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timing.html</title>
+    <style>
+        #container {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background-color: yellow;
+         }   
+         #animate {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: rED;
+            
+        }
+    </style>
+</head>
+<body>
+    <button onclick="moveDiv()">클릭</button>
+    <div id="container">
+        <div id="animate"></div>
+    </div>
+    <script>
+        let position = 0;
+        function moveDiv() {
+            let elem = document.getElementById("animate");
+            let job = setInterval(function() {
+                elem.style.top = position++ + "px";
+                elem.style.left = position++ + "px";
+                if (position == 350) {
+                    clearInterval(job);
+                }
+            }, 10);
+        }
+        function callfunc() {
+            let cnt = 0;
+            // windows.setTimeout(callBackFunc, 1000);
+            window.setInterval(add(cnt++), 1000);
+            function add() {
+            console.log(cnt++ + " add() 호출,");
+        }
+        function callBackFunc() {
+            console.log("1초 지남,")
+        }
+    }
+    let interval = window.setInterval(add, 1000);
+
+    if (position == 10){
+        window.clearInterval(interval);
+    }
+            // window.setTimeout(function() {
+            //     alert("1초가 지났습니다")
+            // }, 1000);
+        
+    </script>
+</body>
+</html>

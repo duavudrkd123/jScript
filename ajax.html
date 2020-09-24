@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax.html</title>
+    <script>
+        function loadPage() {
+            console.log("loadPage()");
+            let xhtp = new XMLHttpRequest();
+            xhtp.onreadystatechange = function () {
+                console.log(xhtp.readyState, xhtp.status);
+            }
+            xhtp.open("get", "data.txt");
+            xhtp.send();
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Ajax Sample</h1>
+    <button onclick="loadPage()">클릭</button>
+</body>
+
+</html>
