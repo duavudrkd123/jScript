@@ -11,8 +11,13 @@
             let xhtp = new XMLHttpRequest();
             xhtp.onreadystatechange = function () {
                 console.log(xhtp.readyState, xhtp.status);
+            if(xhtp.readyState == 4 && xhtp.status == 200){
+                let data = xhtp.responseText;
+                let obj = JSON.parse(data);
+                console.log(obj);
             }
-            xhtp.open("get", "data.txt");
+            }
+            xhtp.open("get", "MOCK.json");
             xhtp.send();
         }
     </script>
