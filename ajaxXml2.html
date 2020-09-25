@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajaxXml2.html</title>
+    <script>
+        let cnt = 0;
+        let lnth = 0;
+
+
+        function prev() {
+            if(cnt == -1){
+            cnt--;
+            }
+            showCD(cnt);
+            console.log(cnt);
+            cnt=25;
+        }
+
+        function next() {
+            if(cnt == lnth){
+            cnt = 0;
+            }
+            showCD(cnt);
+            cnt++;
+            console.log(cnt);
+        }
+
+        function showCD(i) {
+        let myDiv = document.getElementById('show') // show엘리먼트를 가져오겠다.
+            let xhtp = new XMLHttpRequest();
+            let myTag = '';
+            xhtp.onreadystatechange = function() {
+                if(xhtp.readyState == 4 && xhtp.status == 200){
+                   let data = xhtp.responseXML;
+                   let cds = data.getElementsByTagName('CD');
+                   lnth = cds.length;
+                   myTag += 'Title: ' + cds[i].children[0].innerHTML; //title을 보자
+                   myTag += '<br>Artist: ' + cds[i].children[1].innerHTML;
+                   myTag += '<br>Country: ' + cds[i].children[2].innerHTML;
+
+                   myDiv.innerHTML = myTag;
+                }
+
+            }
+            xhtp.open('get', 'cd_catalog.xml');
+            xhtp.send();
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="showCD(4)">show</button>
+    <div id="show"></div>
+    <!-- 인덱스값을 키우면서 노래 정보를 받아오는거 -->
+    <button onclick="prev()"><<</button> 
+    <button onclick="next()">>></button>
+
+</body>
+
+</html>

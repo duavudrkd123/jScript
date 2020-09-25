@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajaxXml.html</title>
+    <script>
+        function loadXml() {
+            let xhtp = new XMLHttpRequest();
+
+            xhtp.onreadystatechange = function () {
+                if (xhtp.readyState == 4 && xhtp.status == 200) {
+                    // console.log(xhtp.responseXML);
+                    createPage(xhtp.responseXML);
+
+                }
+            }
+            xhtp.open('get', 'cd_catalog.xml', true);
+            xhtp.send();
+        }
+
+        function createPage(data) {
+            let titles = ['노래제목','가수', '나라', '레코드사']
+            let tbl = document.getElementById("tbl")
+            let cds = data.getElementsByTagName('CD');
+            // console.log(data);
+            let tr, td, text;
+            tr = document.createElement("tr");
+            for(let title of titles) {
+                // column 생성. (artist, title)
+                td = document.createElement("td");
+                text = document.createTextNode(title);
+                
+                
+                td.append(text);
+                tr.append(td);
+                tbl.append(tr)
+            }
+            
+            for (let i = 0; i < cds.length; i++) {
+                // row한건 생성.
+                tr = document.createElement("tr");
+                for(let j=0; j<titles.length; j++){
+
+                    // column 생성. (artist, title)
+                    td = document.createElement("td");
+                    text = document.createTextNode(cds[i].children[j].innerHTML);
+                   
+                    
+                    td.append(text);
+                    tr.append(td);
+                    tbl.append(tr);
+                }
+
+                // td = document.createElement("td");
+                // text = document.createTextNode(
+                //     cds[i].children[1].innerHTML); //title
+                // td.append(text);
+                // tr.append(td);
+
+                // td = document.createElement("td");
+                // text = document.createTextNode(
+                //     cds[i].children[2].innerHTML); //title
+                // td.append(text);
+                // tr.append(td);
+
+                // td = document.createElement("td");
+                // text = document.createTextNode(
+                //     cds[i].children[3].innerHTML); //title
+                // td.append(text);
+                // tr.append(td);
+
+
+                //    cds[i].children[1].innerHTML; //artist
+                //    cds[i].children[2].innerHTML; // country
+                //    cds[i].children[3].innerHTML;//company
+            }
+            tbl.append("리스트");
+            console.log(cds[0].children[1].innerHTML);
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <h2>XML 요청</h2><br>
+    <button onclick="loadXml()">클릭</button>
+
+    <table border="1px, red" id="tbl"></table>
+
+</body>
+
+</html>
