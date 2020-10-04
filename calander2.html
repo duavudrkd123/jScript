@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="kate" >
+    <input type="text" id="katemonth" >
+    <button id="btn">입력</button>
+    <div id="showResult" style="border: 1px solid red;"></div>
+    <script>
+        console.log("kate")
+        var cols = ['일', '월', '화', '수', '목', '금', '토'];
+        var elem = document.getElementById("showResult"); //아이디값을 받아오는것
+        var tag = "<table border='5'bordercolor='red'><tr>";
+        var today = new Date();
+        var kate = document.getElementById("kate");
+        var katemonth = document.getElementById("katemonth");
+        var btn = document.getElementById("btn");
+        today = new Date(kate.value*1,katemonth.value*1,0).getDate();
+        var todate = new Date(kate.value*1,katemonth.value*1-1,1).getDay();
+        btn.onclick = function(){
+        
+
+
+
+
+        
+        for (col of cols) {
+            tag += "<td>" + col + "</td>";
+
+        }
+        tag += "<tr></tr>";
+        for (var i = 0; i < todate; i++) {
+
+            tag += "<td></td>";
+        }
+
+        for (var i = 1; i <= today; i++) {
+            tag += "<td>"+i+"</td>";
+            if ((i+todate)%7==0){
+                tag +="</tr><tr>";
+            }
+
+
+        }
+            tag += "</tr></table>";
+            elem.innerHTML = tag;
+
+            
+        }
+        elem.innerHTML = "";
+
+    </script>
+</body>
+
+</html>

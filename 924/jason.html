@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            border-style: solid;
+            border:   1px red;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let date = [{
+                "id": 1,
+                "first_name": "Lamont",
+                "last_name": "Sainthill",
+                "email": "lsainthill0@slate.com",
+                "gender": "Male"
+            },
+            {
+                "id": 2,
+                "first_name": "Dorice",
+                "last_name": "Witul",
+                "email": "dwitul1@huffingtonpost.com",
+                "gender": "Female"
+            },
+            {
+                "id": 3,
+                "first_name": "Sosanna",
+                "last_name": "Scotfurth",
+                "email": "sscotfurth2@hibu.com",
+                "gender": "Female"
+            },
+            {
+                "id": 4,
+                "first_name": "Judah",
+                "last_name": "Moss",
+                "email": "jmoss3@barnesandnoble.com",
+                "gender": "Male"
+            },
+            {
+                "id": 5,
+                "first_name": "Rozamond",
+                "last_name": "Corkell",
+                "email": "rcorkell4@cbslocal.com",
+                "gender": "Female"
+            },
+            {
+                "id": 6,
+                "first_name": "Curtis",
+                "last_name": "Lattey",
+                "email": "clattey5@odnoklassniki.ru",
+                "gender": "Male"
+            },
+            {
+                "id": 7,
+                "first_name": "Sophia",
+                "last_name": "Lomaz",
+                "email": "slomaz6@gmpg.org",
+                "gender": "Female"
+            },
+            {
+                "id": 8,
+                "first_name": "Zachary",
+                "last_name": "Gilligan",
+                "email": "zgilligan7@bbb.org",
+                "gender": "Male"
+            },
+            {
+                "id": 9,
+                "first_name": "Renata",
+                "last_name": "Ransom",
+                "email": "rransom8@fda.gov",
+                "gender": "Female"
+            },
+            {
+                "id": 10,
+                "first_name": "Cece",
+                "last_name": "Corbie",
+                "email": "ccorbie9@comsenz.com",
+                "gender": "Male"
+            },
+            {
+                "id": 11,
+                "first_name": "Lorine",
+                "last_name": "Lankham",
+                "email": "llankhama@netscape.com",
+                "gender": "Female"
+            },
+            {
+                "id": 12,
+                "first_name": "Janeta",
+                "last_name": "Gouldstone",
+                "email": "jgouldstoneb@cbsnews.com",
+                "gender": "Female"
+            },
+            {
+                "id": 13,
+                "first_name": "Cory",
+                "last_name": "Caselick",
+                "email": "ccaselickc@google.ru",
+                "gender": "Female"
+            },
+            {
+                "id": 14,
+                "first_name": "Aldwin",
+                "last_name": "Orrice",
+                "email": "aorriced@soup.io",
+                "gender": "Male"
+            },
+            {
+                "id": 15,
+                "first_name": "Meade",
+                "last_name": "Castledine",
+                "email": "mcastledinee@yahoo.com",
+                "gender": "Male"
+            },
+            {
+                "id": 16,
+                "first_name": "Dareen",
+                "last_name": "Maylott",
+                "email": "dmaylottf@skype.com",
+                "gender": "Female"
+            },
+            {
+                "id": 17,
+                "first_name": "Sebastian",
+                "last_name": "Kerin",
+                "email": "skering@dailymotion.com",
+                "gender": "Male"
+            },
+            {
+                "id": 18,
+                "first_name": "Shauna",
+                "last_name": "Lines",
+                "email": "slinesh@netvibes.com",
+                "gender": "Female"
+            },
+            {
+                "id": 19,
+                "first_name": "Booth",
+                "last_name": "Ennals",
+                "email": "bennalsi@newyorker.com",
+                "gender": "Male"
+            },
+            {
+                "id": 20,
+                "first_name": "Joelynn",
+                "last_name": "Balf",
+                "email": "jbalfj@cdbaby.com",
+                "gender": "Female"
+            },
+            {
+                "id": 21,
+                "first_name": "Callean",
+                "last_name": "Summerlee",
+                "email": "csummerleek@yellowbook.com",
+                "gender": "Male"
+            },
+            {
+                "id": 22,
+                "first_name": "Marlyn",
+                "last_name": "Malser",
+                "email": "mmalserl@soundcloud.com",
+                "gender": "Female"
+            },
+            {
+                "id": 23,
+                "first_name": "Gertie",
+                "last_name": "Goby",
+                "email": "ggobym@usa.gov",
+                "gender": "Female"
+            },
+            {
+                "id": 24,
+                "first_name": "Annice",
+                "last_name": "Lehrahan",
+                "email": "alehrahann@zimbio.com",
+                "gender": "Female"
+            },
+            {
+                "id": 25,
+                "first_name": "Husein",
+                "last_name": "Churchman",
+                "email": "hchurchmano@mail.ru",
+                "gender": "Male"
+            },
+            {
+                "id": 26,
+                "first_name": "Butch",
+                "last_name": "Shegog",
+                "email": "bshegogp@quantcast.com",
+                "gender": "Male"
+            },
+            {
+                "id": 27,
+                "first_name": "Ileana",
+                "last_name": "Carlick",
+                "email": "icarlickq@icio.us",
+                "gender": "Female"
+            },
+            {
+                "id": 28,
+                "first_name": "Clarice",
+                "last_name": "Guerry",
+                "email": "cguerryr@cbsnews.com",
+                "gender": "Female"
+            },
+            {
+                "id": 29,
+                "first_name": "Matthieu",
+                "last_name": "Bassick",
+                "email": "mbassicks@cnet.com",
+                "gender": "Male"
+            },
+            {
+                "id": 30,
+                "first_name": "Dasie",
+                "last_name": "Cabena",
+                "email": "dcabenat@last.fm",
+                "gender": "Female"
+            }
+        ]
+    </script>
+<tr>
+    <td>dd</td>
+    <td>dd</td>
+</tr>
+</body>
+
+</html>
